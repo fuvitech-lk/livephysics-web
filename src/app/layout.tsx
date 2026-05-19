@@ -1,18 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Sora, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const sora = Sora({
+// Self-hosted (variable woff2) so the build needs no network — required for
+// reliable static-export CI on GitHub Pages.
+const sora = localFont({
   variable: "--font-sora",
-  subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
   display: "swap",
+  src: "./fonts/Sora.woff2",
+  weight: "400 800",
 });
 
-const inter = Inter({
+const inter = localFont({
   variable: "--font-inter",
-  subsets: ["latin"],
   display: "swap",
+  src: "./fonts/Inter.woff2",
+  weight: "100 900",
 });
 
 // Overridden in CI with the GitHub Pages URL; defaults to the production domain.
