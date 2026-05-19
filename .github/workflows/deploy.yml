@@ -27,13 +27,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
 
       - name: Install dependencies
-        # Skip optional deps: the Windows-generated lockfile lists
-        # platform-specific sharp binaries that break `npm ci` on Linux,
-        # and the static export build needs neither sharp nor them.
-        run: npm ci --omit=optional --no-audit --no-fund
+        # Plain npm ci: Next's @next/swc-* are optionalDependencies and
+        # ARE required to build. No setup-node npm cache (a poisoned cache
+        # from earlier failed runs is the likely deterministic failure).
+        run: npm ci --no-audit --no-fund || (npm cache clean --force && npm ci --no-audit --no-fund)
 
       - name: Build static site
         env:
