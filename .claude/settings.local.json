@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:livephysics.lk)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_close",
+      "Bash(npm --version)",
+      "Bash(echo \"npm: $\\(npm --version 2>&1\\)\")",
+      "Bash(pnpm --version)",
+      "Bash(echo \"pnpm: $\\(pnpm --version 2>&1\\)\")",
+      "Bash(git --version)",
+      "Read(//h/FUVITECH/**)",
+      "Bash(mkdir -p _lp_stash)",
+      "Bash(mv \"livephysics-web/.claude\" _lp_stash/)",
+      "Bash(mv \"livephysics-web/.playwright-mcp\" _lp_stash/)",
+      "Bash(mv \"livephysics-web/livephysics-home.jpeg\" _lp_stash/)",
+      "Bash(npx --yes create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --no-turbopack --use-npm)"
+    ]
+  }
+}
