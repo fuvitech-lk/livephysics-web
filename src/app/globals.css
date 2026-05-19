@@ -1,26 +1,204 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  LivePhysics design system — a dark "physics lab at night" theme built around
+  the brand logo's royal indigo + crimson and an atomic-orbit motif.
+*/
+@theme {
+  /* Surfaces */
+  --color-bg: #070615;
+  --color-bg-soft: #0b0920;
+  --color-surface: #110e2b;
+  --color-surface-2: #181440;
+
+  /* Brand — indigo primary (brightened from logo #2E2A8C for dark UIs) */
+  --color-brand: #3a32b8;
+  --color-brand-light: #6c63ff;
+  --color-brand-glow: #8b7bff;
+
+  /* Accent — crimson (electron dot / "PHYSICS" red) */
+  --color-accent: #e11d48;
+  --color-accent-soft: #ff486b;
+
+  /* Ink */
+  --color-ink: #f5f4ff;
+  --color-muted: #a7a3cf;
+  --color-faint: #6f6b95;
+
+  /* Lines */
+  --color-hairline: rgba(255, 255, 255, 0.08);
+
+  /* Type */
+  --font-display: var(--font-sora);
+  --font-sans: var(--font-inter);
+
+  /* Motion */
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Radius */
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  * {
+    border-color: var(--color-hairline);
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-light);
+    color: #fff;
+  }
+
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  /* Frosted glass surface used for cards & the sticky nav */
+  .glass {
+    background: color-mix(in srgb, var(--color-surface) 65%, transparent);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid var(--color-hairline);
+  }
+
+  /* Indigo→crimson brand text gradient */
+  .text-gradient {
+    background: linear-gradient(
+      100deg,
+      var(--color-brand-light) 0%,
+      #b9a4ff 45%,
+      var(--color-accent-soft) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Soft radial glow behind hero / section anchors */
+  .glow-brand {
+    background: radial-gradient(
+      circle at center,
+      color-mix(in srgb, var(--color-brand-light) 38%, transparent) 0%,
+      transparent 70%
+    );
+  }
+  .glow-accent {
+    background: radial-gradient(
+      circle at center,
+      color-mix(in srgb, var(--color-accent) 32%, transparent) 0%,
+      transparent 70%
+    );
+  }
+
+  .section-pad {
+    padding-block: clamp(4.5rem, 10vw, 9rem);
+  }
+
+  .shell {
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+  }
+}
+
+/* Atomic-orbit + electron motion echoing the logo */
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes float-soft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes gradient-pan {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Slow shimmer for headline highlights */
+.text-gradient-anim {
+  background-size: 220% auto;
+  animation: gradient-pan 9s ease-in-out infinite;
+}
+
+.animate-orbit-slow {
+  animation: orbit-spin 38s linear infinite;
+}
+.animate-orbit-rev {
+  animation: orbit-spin 52s linear infinite reverse;
+}
+.animate-float {
+  animation: float-soft 7s var(--ease-out-quint) infinite;
+}
+.animate-pulse-glow {
+  animation: pulse-glow 5s ease-in-out infinite;
+}
+.animate-marquee {
+  animation: marquee 38s linear infinite;
+}
+.pause-on-hover:hover .animate-marquee {
+  animation-play-state: paused;
 }

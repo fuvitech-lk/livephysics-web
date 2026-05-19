@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# project: local agent + analysis artifacts
+/.claude/settings.local.json
+/.playwright-mcp/
+/reference/
+*.jpeg.bak
