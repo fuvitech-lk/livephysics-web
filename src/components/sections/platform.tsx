@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { LayoutGrid, Bot, LineChart } from "lucide-react";
 import { platform } from "@/lib/content";
+import { asset } from "@/lib/utils";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { Reveal, StaggerGroup, RevealItem } from "@/components/ui/reveal";
 
@@ -37,7 +38,7 @@ export function Platform() {
               </span>
             </div>
             <Image
-              src={platform.screenshot}
+              src={asset(platform.screenshot)}
               alt={platform.screenshotAlt}
               width={1600}
               height={762}

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Apple, Play, Sparkles, Check } from "lucide-react";
 import { appPromo } from "@/lib/content";
+import { asset } from "@/lib/utils";
 import { Section } from "@/components/ui/section";
 import { Reveal, StaggerGroup } from "@/components/ui/reveal";
 
@@ -12,7 +13,7 @@ function SdeeAvatar({ size = 40 }: { size?: number }) {
       style={{ width: size, height: size }}
     >
       <Image
-        src="/sdee.png"
+        src={asset("/sdee.png")}
         alt=""
         width={size * 2}
         height={size * 2}
@@ -139,7 +140,7 @@ export function AppPromo() {
             </div>
             {/* SDee.ai mascot presenting the app */}
             <Image
-              src="/sdee.png"
+              src={asset("/sdee.png")}
               alt={`${sdee.name} — ${sdee.tagline}`}
               width={620}
               height={935}

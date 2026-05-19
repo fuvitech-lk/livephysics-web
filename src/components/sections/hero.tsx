@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { hero } from "@/lib/content";
+import { asset } from "@/lib/utils";
 import { Reveal } from "@/components/ui/reveal";
 import { Button } from "@/components/ui/button";
 import { OrbitBackdrop } from "@/components/backdrop/orbit-backdrop";
@@ -81,7 +82,7 @@ function HeroVisual() {
       </div>
       <div className="absolute inset-0 grid place-items-center">
         <Image
-          src="/logo-mark.png"
+          src={asset("/logo-mark.png")}
           alt=""
           width={220}
           height={220}

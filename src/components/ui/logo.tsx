@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/content";
-import { cn } from "@/lib/utils";
+import { cn, asset } from "@/lib/utils";
 
 export function Logo({
   className,
@@ -22,7 +22,7 @@ export function Logo({
       )}
     >
       <Image
-        src="/logo.png"
+        src={asset("/logo.png")}
         alt=""
         width={size}
         height={size}

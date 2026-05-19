@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { institutes } from "@/lib/content";
+import { asset } from "@/lib/utils";
 import { Section, SectionHeading } from "@/components/ui/section";
 import { StaggerGroup, RevealItem } from "@/components/ui/reveal";
 
@@ -25,7 +26,7 @@ export function Institutes() {
           <RevealItem key={logo.name} direction="up" hover>
             <div className="group flex h-28 items-center justify-center rounded-2xl border border-hairline bg-white/95 px-6 shadow-lg shadow-black/20 transition-shadow duration-300 hover:shadow-brand-light/20">
               <Image
-                src={logo.src}
+                src={asset(logo.src)}
                 alt={`${logo.name} — LivePhysics partner institute`}
                 width={220}
                 height={88}

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { founder } from "@/lib/content";
+import { asset } from "@/lib/utils";
 import { Section } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 
@@ -61,7 +62,7 @@ export function Founder() {
               className="absolute bottom-2 left-1/2 -z-10 h-10 w-3/5 -translate-x-1/2 rounded-[100%] bg-brand-light/20 blur-2xl"
             />
             <Image
-              src={founder.image}
+              src={asset(founder.image)}
               alt={`${founder.name}, ${founder.role}`}
               width={1000}
               height={1149}

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { cn } from "@/lib/utils";
+import { cn, asset } from "@/lib/utils";
 
 // Static gradient strings so Tailwind keeps them in the build.
 const GRADIENTS = [
@@ -47,7 +47,7 @@ export function Avatar({
         style={{ width: size, height: size }}
       >
         <Image
-          src={src}
+          src={asset(src)}
           alt={name}
           fill
           sizes={`${size}px`}
