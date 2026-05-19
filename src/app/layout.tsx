@@ -15,7 +15,8 @@ const inter = Inter({
   display: "swap",
 });
 
-const SITE_URL = "https://livephysics.lk";
+// Overridden in CI with the GitHub Pages URL; defaults to the production domain.
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://livephysics.lk";
 const DESCRIPTION =
   "The only book-backed online programme covering the full G.C.E. Advanced Level Physics syllabus in English medium — real interactive live classes, not streamed classroom video.";
 
