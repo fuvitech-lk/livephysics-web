@@ -1,0 +1,4 @@
+:HL["/livephysics-web/_next/static/chunks/0gp1h1kbjoypv.css","style"]
+:HL["/livephysics-web/_next/static/media/Inter-s.p.055ydel_y7o6i.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/livephysics-web/_next/static/media/Sora-s.p.0.t43z0r4ut6_.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}},"staleTime":300,"buildId":"kmKsvcsVXtqaV5dFFrX76"}

@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+
+Host: https://livephysics.lk
+Sitemap: https://livephysics.lk/sitemap.xml
