@@ -21,12 +21,12 @@ const inter = localFont({
 // Overridden in CI with the GitHub Pages URL; defaults to the production domain.
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://livephysics.lk";
 const DESCRIPTION =
-  "The only book-backed online programme covering the full G.C.E. Advanced Level Physics syllabus in English medium — real interactive live classes, not streamed classroom video.";
+  "The only book-backed programme covering the full G.C.E. Advanced Level Physics syllabus in English medium — genuinely interactive classes, online and in person, never just streamed video.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "LivePhysics — Real Online A/L Physics, English Medium",
+    default: "LivePhysics — Real A/L Physics, English Medium · Online & In Class",
     template: "%s | LivePhysics",
   },
   description: DESCRIPTION,
@@ -41,12 +41,12 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: "LivePhysics",
-    title: "LivePhysics — Real Online A/L Physics, English Medium",
+    title: "LivePhysics — Real A/L Physics, English Medium · Online & In Class",
     description: DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: "LivePhysics — Real Online A/L Physics, English Medium",
+    title: "LivePhysics — Real A/L Physics, English Medium · Online & In Class",
     description: DESCRIPTION,
   },
   alternates: { canonical: SITE_URL },

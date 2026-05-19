@@ -12,7 +12,7 @@
 
 export const site = {
   name: "LivePhysics",
-  tagline: "Real online A/L Physics. English medium.",
+  tagline: "Real A/L Physics — online and in class. English medium.",
   phoneDisplay: "078 882 2226",
   phoneRaw: "0788822226",
   phoneIntl: "+94788822226",
@@ -36,7 +36,7 @@ export const hero = {
   title: ["Physics, taught the way", "it should be"],
   highlight: "experienced",
   subtitle:
-    "The only programme in the country built to cover the full A/L Physics syllabus in English medium — with genuine interactive live classes, not streamed classroom video.",
+    "The only programme in the country built to cover the full A/L Physics syllabus in English medium — taught through genuinely interactive classes, online and in person, never just streamed video.",
   primaryCta: { label: "Join Live Classes", href: "#contact" },
   secondaryCta: { label: "See how it works", href: "#classes" },
 } as const;
@@ -169,7 +169,7 @@ export const founder = {
 
 export const stats = [
   { value: 12000, suffix: "+", label: "Live sessions delivered" },
-  { value: 3500, suffix: "+", label: "Students enrolled online" },
+  { value: 3500, suffix: "+", label: "Students taught" },
   { value: 11, suffix: "", label: "A/L Physics units covered" },
   { value: 98, suffix: "%", label: "Student satisfaction" },
 ] as const;
@@ -261,13 +261,13 @@ export const institutes = {
 
 export const contact = {
   eyebrow: "Get started",
-  title: "Ready to experience real online physics learning?",
-  body: "Talk to us about joining the next intake. We'll walk you through the programme and answer every question.",
+  title: "Ready to experience physics taught the right way?",
+  body: "Join the next intake — online or in person at our partner institutes. We'll walk you through the programme and answer every question.",
 } as const;
 
 export const footer = {
   blurb:
-    "The only book-backed online programme covering the full G.C.E. Advanced Level Physics syllabus in English medium.",
+    "The only book-backed programme covering the full G.C.E. Advanced Level Physics syllabus in English medium — online and in class.",
   credit: {
     label: "Designed & developed by",
     name: "FUVITECH",
