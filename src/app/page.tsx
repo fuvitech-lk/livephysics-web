@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
+import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
 import { LiveClasses } from "@/components/sections/live-classes";
@@ -32,6 +33,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

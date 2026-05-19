@@ -48,6 +48,9 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-brand-light) var(--color-bg-soft);
   }
 
   body {
@@ -57,6 +60,33 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
+  }
+
+  /* Brand-themed scrollbar (WebKit / Chromium) */
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg-soft);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      var(--color-brand) 0%,
+      var(--color-brand-light) 60%,
+      var(--color-accent) 100%
+    );
+    border-radius: 999px;
+    border: 2px solid var(--color-bg-soft);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      var(--color-brand-light) 0%,
+      var(--color-accent-soft) 100%
+    );
+  }
+  ::-webkit-scrollbar-corner {
+    background: var(--color-bg-soft);
   }
 
   h1, h2, h3, h4 {
