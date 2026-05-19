@@ -30,7 +30,10 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        # Skip optional deps: the Windows-generated lockfile lists
+        # platform-specific sharp binaries that break `npm ci` on Linux,
+        # and the static export build needs neither sharp nor them.
+        run: npm ci --omit=optional --no-audit --no-fund
 
       - name: Build static site
         env:
