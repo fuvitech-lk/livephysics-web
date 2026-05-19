@@ -268,6 +268,11 @@ export const contact = {
 export const footer = {
   blurb:
     "The only book-backed online programme covering the full G.C.E. Advanced Level Physics syllabus in English medium.",
+  credit: {
+    label: "Designed & developed by",
+    name: "FUVITECH",
+    href: "https://fuvitech.dev",
+  },
   columns: [
     {
       title: "Explore",

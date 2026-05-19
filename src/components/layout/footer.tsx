@@ -43,7 +43,20 @@ export function Footer() {
         <p>
           © {year} {site.name}. All rights reserved.
         </p>
-        <p>G.C.E. Advanced Level Physics · English Medium · Sri Lanka</p>
+        <p className="hidden md:block">
+          G.C.E. Advanced Level Physics · English Medium · Sri Lanka
+        </p>
+        <p>
+          {footer.credit.label}{" "}
+          <a
+            href={footer.credit.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-display font-semibold text-ink/80 transition-colors hover:text-brand-light"
+          >
+            {footer.credit.name}
+          </a>
+        </p>
       </div>
     </footer>
   );
